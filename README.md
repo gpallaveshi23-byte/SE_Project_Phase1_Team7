@@ -7,7 +7,7 @@ Software Engineering Project Phase 1)
 - GitHub: gpallaveshi23-byte
 ## Team Members:
 1. Gerart Pallaveshi - GitHub: gpallaveshi23-byte - Email: gpallaveshi23@epoka.edu.al
-2. Eron Akshija - GitHub: eakshija23-byte - Email: eakshija23@epoka.edu.al
+2. Eron Akshija - GitHub: eronakshija - Email: eakshija23@epoka.edu.al
 3. Iris Ramo - GitHub: iramo23-boop - Email: iramo23@epoka.edu.al
 4. Olta Alliu - GitHub: oalliu23-dotcom - Email: oalliu23@epoka.edu.al
 # Project Details
