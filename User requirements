@@ -1,0 +1,366 @@
+Submission Deadline
+12/04/2026 – 23:59 hours
+
+1. Chosen Development Model
+Model: Agile
+Justification: We chose the agile model because it is flexible and easy to adapt. Since the project requirements can change during development, Agile allows us to make updates without affecting the whole system.
+
+2. User Requirements
+a. Stakeholders (WHO is involved)
+• Teachers
+Use the system to record attendance, enter grades, and communicate with students. They want to reduce paperwork and save time.
+• Students
+Access their grades, schedules, and announcements. They want quick and easy access to their school information.
+b. User Stories (WHAT they need and WHY)
+As a teacher, I want to mark attendance online so that I don’t need to use paper registers.
+As a teacher, I want to enter student grades so that students can see their results easily.
+As a student, I want to check my grades online so that I can track my performance.
+As a student, I want to see my class schedule so that I know when my lessons are.
+
+3. Functional Requirements (what the system must do)
+a. Description
+1. User Login
+System should allow teachers and students to log in
+Acceptance Criteria:
+User enters username and password
+System verifies credentials
+User is redirected to dashboard
+
+2. User Logout
+Users can log out
+Acceptance Criteria:
+User clicks logout
+Session ends
+Returns to login page
+
+3. View Dashboard
+Users see their main page
+Acceptance Criteria:
+Teacher sees classes and tools
+Student sees grades and schedule
+
+4. View Students (Teacher)
+Teacher can see list of students
+Acceptance Criteria:
+Students are displayed correctly
+
+5. Mark Attendance
+Teacher marks attendance
+Acceptance Criteria:
+Teacher selects class
+Marks present/absent
+Data is saved
+
+6. View Attendance (Student)
+Student can see attendance
+Acceptance Criteria:
+Attendance is displayed correctly
+
+7. Add Grades
+Teacher enters grades
+Acceptance Criteria:
+Grade is entered
+Saved successfully
+
+8. Update Grades
+Teacher edits grades
+Acceptance Criteria:
+Grade updated
+Changes saved
+
+9. View Grades (Student)
+Student views grades
+Acceptance Criteria:
+Grades are visible and correct
+
+10. View Schedule
+Users view timetable
+Acceptance Criteria:
+Schedule shows correct times/classes
+
+11. Manage Schedule (Teacher)
+Teacher can view/manage lessons
+Acceptance Criteria:
+Schedule updates correctly
+
+12. Post Announcements (Teacher)
+Teacher posts announcements
+Acceptance Criteria:
+Announcement created
+Visible to students
+
+13. View Announcements (Student)
+Student views announcements
+Acceptance Criteria:
+Announcements displayed
+
+14. Search Students
+Teacher searches students
+Acceptance Criteria:
+Correct results shown
+
+15. Profile View
+Users view their profile
+Acceptance Criteria:
+Correct personal info displayed
+
+16. Edit Profile
+Users update their info
+Acceptance Criteria:
+Changes saved
+
+17. Notifications
+System shows updates
+Acceptance Criteria:
+User sees new grades/announcements
+
+18. Role-Based Access
+Different access for teacher/student
+Acceptance Criteria:
+Teacher cannot access student-only features and vice versa
+
+19. Data Storage
+System saves all data
+Acceptance Criteria:
+Data remains after logout
+
+20. Error Handling
+System handles errors
+Acceptance Criteria:
+Shows error messages
+Does not crash
+
+21. Request Transcript (Student)
+Student can request an official transcript document
+Acceptance Criteria:
+Student clicks “Request Transcript”
+Request is submitted successfully
+System shows confirmation message
+
+22. View Transcript Requests (Teacher)
+Teacher can see transcript requests from students
+Acceptance Criteria:
+Teacher sees list of requests
+Each request shows student name and date
+
+23. Approve/Reject Transcript Request (Teacher)
+Teacher reviews and approves or rejects requests
+Acceptance Criteria:
+Teacher selects approve/reject
+Status is updated
+Student can see the result
+
+24. Generate Transcript Document
+System generates transcript for approved requests
+Acceptance Criteria:
+Transcript includes student grades
+Document is created successfully (PDF or similar)
+
+25. Download Transcript (Student)
+Student can download approved transcript
+Acceptance Criteria:
+Download button is available after approval
+File downloads correctly
+
+26.Request Document (Student)
+Student can request different documents (Transcript, Enrollment Certificate, Attendance Certificate)
+Acceptance Criteria:
+Student selects document type
+Clicks request
+Request is submitted successfully
+
+27. View Document Requests (Teacher)
+Teacher can view all document requests
+Acceptance Criteria:
+Requests are listed
+Shows student name and document type
+
+28. Approve/Reject Document Request (Teacher)
+Teacher reviews requests
+Acceptance Criteria:
+Teacher approves or rejects
+Status updates correctly
+
+29. Generate Document
+System creates the requested document
+Acceptance Criteria:
+Correct data is included
+Document is generated (PDF)
+
+30. Download Document (Student)
+Student downloads approved document
+Acceptance Criteria:
+Download option appears
+File downloads successfully
+
+4. Non-Functional Requirements (How well the system should work)
+1. Page Load Speed
+Pages should load quickly for users
+Acceptance Criteria: Pages load in less than 2 seconds
+
+2. Response Time
+System responds quickly to actions like marking attendance or entering grades
+Acceptance Criteria: Updates are processed in less than 5 seconds
+
+3. Usability
+System should be easy for students and teachers to use
+Acceptance Criteria: Users can access main features in 3 clicks or less
+
+4. Navigation
+Menus and links are clear and easy to find
+Acceptance Criteria: Users can find desired pages without help
+
+5. Reliability
+System works consistently without crashing
+Acceptance Criteria: System uptime is at least 99%
+
+6. Security
+Protect sensitive user data
+Acceptance Criteria: Users must log in; students cannot access teacher-only features
+
+7. Data Integrity
+Data should not be lost during updates
+Acceptance Criteria: All updates are saved and remain after logout
+
+8. Maintainability
+System should be easy to update and fix
+Acceptance Criteria: Code is documented; new features can be added without breaking existing functions
+
+9. Browser Compatibility
+Works on common browsers like Chrome, Firefox, and Edge
+Acceptance Criteria: All features function correctly in supported browsers
+
+10. Mobile Access
+Accessible on mobile phones and tablets
+Acceptance Criteria: Layout adjusts properly for different screen sizes
+
+11. Backup
+Data should be backed up regularly
+Acceptance Criteria: Automatic daily backups are created and can be restored
+
+12. Availability
+System should be available during school hours
+Acceptance Criteria: System is accessible between 8 AM and 6 PM
+
+13. Scalability
+System should handle more users and classes if needed
+Acceptance Criteria: Performance remains acceptable as more students are added
+
+14. Accessibility
+System should be usable by all users
+Acceptance Criteria: Fonts are readable, colors are clear, and keyboard navigation works
+
+15. Error Handling
+System should provide clear error messages
+Acceptance Criteria: Invalid input or failed actions show understandable messages
+
+16. Logging
+Important actions are tracked
+Acceptance Criteria: Attendance, grades, and document requests are logged
+
+17. Document Accuracy
+Generated documents must match actual data
+Acceptance Criteria: Transcript, attendance certificate, and enrollment certificate contain correct information
+
+18. Auditability
+Teachers can track changes to grades or requests
+Acceptance Criteria: System shows history of edits and approvals
+
+19. Privacy
+User data should be kept confidential
+Acceptance Criteria: Students cannot see other students’ personal information
+
+20. Feedback
+Users receive confirmation after actions
+Acceptance Criteria: System shows success messages when requests or updates are completed
+
+5. Application Specifications (How the system is built technically)
+a. Architecture
+The system follows a three-tier architecture:
+
+Frontend (User Interface)
+Provides access for students and teachers
+Displays dashboards, grades, attendance, schedules, and document requests
+Sends requests to the backend
+Backend (Business Logic)
+Handles processing of all requests (attendance, grades, document requests)
+Manages user authentication and role-based access
+Communicates with the database to retrieve and store data
+Database
+Stores all information about users, classes, attendance, grades, schedules, and documents
+Ensures data integrity and security
+
+Interaction Flow:
+
+The user interacts with the frontend → the frontend sends requests to the backend → the backend processes the request → the database stores or retrieves the data → the backend sends results back to the frontend → user sees updated information.
+b. Database Model
+
+The system uses a relational database with the following main tables:
+
+Users – stores student and teacher information
+Fields: UserID (PK), Name, Role, Email, Password
+Classes – stores class information
+Fields: ClassID (PK), ClassName, TeacherID (FK)
+Attendance – tracks student attendance
+Fields: AttendanceID (PK), StudentID (FK), ClassID (FK), Date, Status
+Grades – stores student grades
+Fields: GradeID (PK), StudentID (FK), ClassID (FK), Grade
+Schedules – stores class schedules
+Fields: ScheduleID (PK), ClassID (FK), Day, StartTime, EndTime
+Documents – manages document requests (Transcript, Attendance Certificate, Enrollment Certificate)
+Fields: DocumentID (PK), StudentID (FK), DocumentType, Status, DateRequested
+
+Relationships:
+
+Each student can belong to multiple classes (many-to-many via Classes table)
+Each teacher can teach multiple classes (one-to-many)
+Attendance and Grades reference valid Students and Classes
+Document requests reference valid Students
+
+c. Technologies Used
+Backend: Python (Flask or Django)
+Easy to learn and implement, supports web frameworks, and handles database connections
+Frontend: HTML, CSS, JavaScript
+Provides a responsive and interactive interface for students and teachers
+Database: MySQL or SQLite
+Efficient relational database management, supports constraints and relationships
+d. User Interface Design
+
+General Layout:
+
+Login Page: Fields for email/username and password, role selection (Student/Teacher)
+Dashboard:
+Teacher: Shows classes, student lists, attendance, grades, and document requests
+Student: Shows grades, attendance, schedule, and submitted document requests
+Document Requests Page: Students select document type and submit requests; Teachers approve/reject
+Attendance Page: Teachers mark students present or absent
+Grades Page: Teachers enter and update grades; Students view their grades
+Announcements Page: Teachers post announcements; Students view them
+
+Wireframes/Mockups:
+
+Login page at top
+Left-hand side menu for navigation (Dashboard, Attendance, Grades, Documents, Announcements)
+Main content area displays tables, forms, and messages
+e. Security Measures
+Authentication:
+Users (students and teachers) must log in with a valid username/email and password.
+Role-based access control ensures that students and teachers can only access features allowed for their role.
+Password Protection
+Passwords are encrypted (hashed) before being stored in the database.
+This prevents unauthorized access even if the database is compromised.
+Data Protection
+Sensitive information such as grades, attendance, and document requests is protected in the database.
+Students cannot see other students’ personal information.
+Secure Communication
+Data transmitted between the frontend and backend is encrypted using HTTPS to prevent interception.
+Access Control
+Only teachers can mark attendance, enter grades, and approve/reject document requests.
+Students can only view their own information and submit requests.
+Error Handling
+Unauthorized access attempts trigger error messages without revealing system details.
+Audit Logging
+Important actions such as attendance updates, grade entries, and document approvals are logged for accountability.
+
+Summary:
+These measures ensure that the system is secure, reliable, and protects the privacy of students and teachers while preventing unauthorized access.
