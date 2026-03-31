@@ -11,7 +11,7 @@ a. Stakeholders (WHO is involved)
 Use the system to record attendance, enter grades, and communicate with students. They want to reduce paperwork and save time.
 • Students
 Access their grades, schedules, and announcements. They want quick and easy access to their school information.
-• it staff
+• IT staff
 Oversee the system’s operation, maintain servers and databases, and ensure that the software works smoothly. They are interested in system stability, backups, and troubleshooting.
 b. User Stories (WHAT they need and WHY)
 As a teacher, I want to mark attendance online so that I don’t need to use paper registers.
@@ -27,26 +27,17 @@ As an IT staff member, I want to control access permissions so that only authori
 
 3. Functional Requirements (what the system must do)
 a. Description
-1. User Login
-Teachers, students, and IT staff can log in
+1. Teachers, students, and IT staff can log in
 Acceptance Criteria:
 User enters username and password
 System verifies credentials
 User is redirected to dashboard
 
-2. User Logout
-All users can log out
+2. All users can log out
 Acceptance Criteria:
 User clicks logout
 Session ends
 Returns to login page
-
-3. View Dashboard
-Users see their main page
-Acceptance Criteria:
-Teacher: classes, tools, and document requests
-Student: grades, attendance, schedule, and document requests
-IT Staff: system overview, logs, and user activity
 
 4. Role-Based Access
 Access is limited based on user role
@@ -250,7 +241,7 @@ System should be available during school hours
 Acceptance Criteria: System is accessible between 8 AM and 6 PM
 
 13. Scalability
-System should handle more users and classes if needed
+System should handle more 
 Acceptance Criteria: Performance remains acceptable as more students are added
 
 14. Accessibility
