@@ -33,244 +33,234 @@ User enters username and password
 System verifies credentials
 User is redirected to dashboard
 
-2. All users can log out
+2. All users can securely log out of the system
 Acceptance Criteria:
 User clicks logout
-Session ends
-Returns to login page
+Session is terminated
+User is redirected to login page
 
-4. Role-Based Access
-Access is limited based on user role
+4.System restricts features based on user role (Student, Teacher, IT Staff)
 Acceptance Criteria:
-Teachers cannot access IT Staff features
-Students cannot access teacher/IT Staff features
-IT Staff can access all administrative features
+Teachers can manage grades, attendance, and documents
+Students can only view their own data and request documents
+IT Staff can access system management features
 
-5. View Students (Teacher)
-Teacher can see students in their classes
+5. Teachers can view students enrolled in their assigned classes
 Acceptance Criteria:
-Students are displayed correctly
+Only students from teacher’s classes are displayed
+Student list includes name and ID
 
-6. Search Students (Teacher)
-Teachers can search students by name or ID
+6. Teachers can search students within their classes
 Acceptance Criteria:
-Correct student(s) appear in search results
+Search by name or ID returns correct student
+Results update instantly or after search
 
-7. Mark Attendance (Teacher)
-Teacher marks student attendance
+7. Teachers record daily attendance for each class
 Acceptance Criteria:
-Teacher selects class, marks present/absent
-Attendance saved correctly
+Teacher selects class and date
+Marks each student as present/absent
+Attendance is saved and linked to that class and date
 
-8. View Attendance (Student)
-Students can view their attendance records
+8. Students can view their personal attendance history
 Acceptance Criteria:
-Attendance displayed correctly
+Attendance is shown by subject/date
+Data matches teacher records
 
-9. Add Grades (Teacher)
-Teachers enter student grades
+9.Teachers can modify previously entered grades
 Acceptance Criteria:
-Grades are saved correctly
-Students can see them
+Updated grade replaces old one
+Changes are reflected in student view
 
-10. Update Grades (Teacher)
-Teachers edit grades
+10. Students can view their grades by subject
 Acceptance Criteria:
-Updated grades are saved
-Changes visible to students
+Grades are organized by subject
+Data is accurate and updated
 
-11. View Grades (Student)
-Students can view grades
+11. Users can view weekly class timetable
 Acceptance Criteria:
-Grades displayed accurately
+Schedule shows subject, time, and classroom
+Matches assigned classes
 
-12. View Schedule
-Users see class timetable
+12.Teachers can view and adjust their lesson schedule
 Acceptance Criteria:
-Schedule shows correct times and classes
+Changes are saved
+Updated schedule is visible to students
 
-13. Manage Schedule (Teacher)
-Teachers can create or update class schedules
+13. Teachers can post announcements for their classes
 Acceptance Criteria:
-Changes saved and visible to students
+Announcement is linked to class
+Visible only to relevant students
 
-14. Post Announcements (Teacher)
-Teachers can post announcements
+14. Students can view announcements from teachers
 Acceptance Criteria:
-Announcement visible to students
+Only announcements for their classes are shown
 
-15. View Announcements (Student)
-Students view announcements
+15. Users can view their school profile
 Acceptance Criteria:
-All announcements displayed
+Shows name, role, and basic info
+Information matches database
 
-16. Profile View (All Users)
-Users can view their personal profile
+16. Users can update limited personal information
 Acceptance Criteria:
-Profile info displayed correctly
+Changes saved successfully
+Updated info is displayed
 
-17. Edit Profile (All Users)
-Users can update profile info
+17. System notifies users about updates
 Acceptance Criteria:
-Changes saved and visible
+Students receive notifications for grades, attendance, and document status
+Notifications appear on dashboard
 
-18. Notifications
-Users receive alerts for grades, attendance, and documents
+18. Students can request official transcript documents
 Acceptance Criteria:
-Notifications appear in dashboard
+Request is linked to student account
+Confirmation message is shown
 
-19. Request Transcript (Student)
-Students can request official transcripts
+19.Students can request Enrollment or Attendance Certificates
 Acceptance Criteria:
-Request submitted successfully
-Confirmation displayed
+Selected document type is recorded
+Request stored in system
 
-20. Request Other Documents (Student)
-Students can request Enrollment or Attendance Certificates
+20. Teachers can see document requests from their students
 Acceptance Criteria:
-Request submitted successfully
-Confirmation displayed
+Requests show student name, type, and date
 
-21. View Document Requests (Teacher)
-Teachers view student document requests
+21.Teachers review and decide on requests
 Acceptance Criteria:
-Requests listed with student name and document type
+Status updates to approved/rejected
+Student receives notification
 
-22. Approve/Reject Document Requests (Teacher)
-Teachers manage requests
+22.System generates official school documents
 Acceptance Criteria:
-Teachers approve/reject
-Status updated
-Student notified
+Transcript includes subjects and grades
+Certificates include student name and school info
+File generated as PDF
 
-23. Generate Document
-System generates requested documents
+23. Students download approved documents
 Acceptance Criteria:
-Documents include correct data
-PDF generated successfully
+Download button appears after approval
+File downloads correctly
 
-24. Download Document (Student)
-Students download approved documents
+24.System stores all school-related data securely
 Acceptance Criteria:
-Download option appears
-File downloads successfully
+Grades, attendance, and documents remain saved after logout
 
-25. Data Storage
-System saves all user and system data
+25. IT Staff perform regular backups of school data
 Acceptance Criteria:
-Data remains after logout
-No loss of attendance, grades, or documents
+Daily automatic backups
+Manual backup option available
 
-26. Data Backup (IT Staff)
-IT Staff can perform system backups
+26. IT Staff monitor system performance and errors
 Acceptance Criteria:
-Daily backups created automatically
-Manual backups can be triggered
+Dashboard shows system status and activity logs
 
-27. System Monitoring (IT Staff)
-IT Staff monitors system health and logs
+27.IT Staff manage teacher and student accounts
 Acceptance Criteria:
-Dashboard shows status, errors, and user activity
+Accounts can be created, updated, or deactivated
+Changes apply immediately
 
-28. User Account Management (IT Staff)
-IT Staff can create, edit, or deactivate accounts
+28. IT Staff enforce system security rules
 Acceptance Criteria:
-Accounts are updated or deactivated correctly
-Users notified of changes
+Passwords stored encrypted
+Unauthorized access blocked
 
-29. Security & Role-Based Controls (IT Staff)
-IT Staff manage system security
+29. System handles errors during operations
 Acceptance Criteria:
-Passwords encrypted
-Unauthorized access prevented
-Roles enforced correctly
+Displays clear messages (e.g., invalid login, missing data)
+System continues running without crashing
 
-30. Error Handling
-System handles errors and failures gracefully
+30. System checks input data before saving
 Acceptance Criteria:
-Displays clear error messages
-System does not crash
+Invalid inputs (empty fields, wrong formats) are rejected
+User is prompted to correct errors
 
 4. Non-Functional Requirements (How well the system should work)
-1. Page Load Speed
-Pages should load quickly for users
-Acceptance Criteria: Pages load in less than 2 seconds
+1. System pages (dashboard, grades, attendance) should load quickly
+Acceptance Criteria:
+Pages load in less than 2 seconds
 
-2. Response Time
-System responds quickly to actions like marking attendance or entering grades
-Acceptance Criteria: Updates are processed in less than 5 seconds
+2.System should respond quickly when teachers mark attendance or enter grades
+Acceptance Criteria:
+Actions (save attendance/grades) complete in less than 5 seconds
 
-3. Usability
-System should be easy for students and teachers to use
-Acceptance Criteria: Users can access main features in 3 clicks or less
+3. System should be simple and easy for students and teachers to use
+Acceptance Criteria:
+Users can access main features (grades, attendance, documents) in 3 clicks or less
 
-4. Navigation
-Menus and links are clear and easy to find
-Acceptance Criteria: Users can find desired pages without help
+4.System should have clear menus for dashboard, grades, attendance, and documents
+Acceptance Criteria:
+Users can find any feature without needing help
 
-5. Reliability
-System works consistently without crashing
-Acceptance Criteria: System uptime is at least 99%
+5. System should work without crashing during school usage
+Acceptance Criteria:
+System uptime is at least 99% during school hours
 
-6. Security
-Protect sensitive user data
-Acceptance Criteria: Users must log in; students cannot access teacher-only features
+6. Protect sensitive school data such as grades and attendance
+Acceptance Criteria:
+Login is required for all users
+Students cannot access teacher or IT staff features
 
-7. Data Integrity
-Data should not be lost during updates
-Acceptance Criteria: All updates are saved and remain after logout
+7. Student grades, attendance, and document requests must not be lost or changed incorrectly
+Acceptance Criteria:
+All saved data remains correct after logout or refresh
 
-8. Maintainability
-System should be easy to update and fix
-Acceptance Criteria: Code is documented; new features can be added without breaking existing functions
+8. System should be easy for IT staff to update and maintain
+Acceptance Criteria:
+Code is structured and documented
+Updates do not break existing features
 
-9. Browser Compatibility
-Works on common browsers like Chrome, Firefox, and Edge
-Acceptance Criteria: All features function correctly in supported browsers
+9. System should work on common browsers used in schools
+Acceptance Criteria:
+Fully functional on Chrome, Firefox, and Edge
 
-10. Mobile Access
-Accessible on mobile phones and tablets
-Acceptance Criteria: Layout adjusts properly for different screen sizes
+10. Students and teachers should access the system from phones
+Acceptance Criteria:
+Interface adjusts correctly for mobile screens
 
-11. Backup
-Data should be backed up regularly
-Acceptance Criteria: Automatic daily backups are created and can be restored
+11.School data should be backed up regularly by IT staff
+Acceptance Criteria:
+Automatic daily backups are created
+Data can be restored if needed
 
-12. Availability
-System should be available during school hours
-Acceptance Criteria: System is accessible between 8 AM and 6 PM
+12. System should be available during school working hours
+Acceptance Criteria:
+Accessible from 08:00 to 18:00 without interruption
 
-13. Scalability
-System should handle more 
-Acceptance Criteria: Performance remains acceptable as more students are added
+13. System should handle increasing number of students and classes
+Acceptance Criteria:
+Performance remains stable with more users
 
-14. Accessibility
-System should be usable by all users
-Acceptance Criteria: Fonts are readable, colors are clear, and keyboard navigation works
+14.System should be usable for all students and teachers
+Acceptance Criteria:
+Text is readable
+Colors are clear
+Basic keyboard navigation works
 
-15. Error Handling
-System should provide clear error messages
-Acceptance Criteria: Invalid input or failed actions show understandable messages
+15.System should handle errors during login, grading, or requests
+Acceptance Criteria:
+Clear messages shown (e.g., wrong password, missing fields)
+System continues working without crashing
 
-16. Logging
-Important actions are tracked
-Acceptance Criteria: Attendance, grades, and document requests are logged
+16. System should track important school actions
+Acceptance Criteria:
+Logs include grade updates, attendance marking, and document approvals
 
-17. Document Accuracy
-Generated documents must match actual data
-Acceptance Criteria: Transcript, attendance certificate, and enrollment certificate contain correct information
+17.Generated school documents must be correct and official
+Acceptance Criteria:
+Transcripts include correct subjects and grades
+Certificates include correct student and school information
 
-18. Auditability
-Teachers can track changes to grades or requests
-Acceptance Criteria: System shows history of edits and approvals
+18. Teachers and IT staff should be able to track changes
+Acceptance Criteria:
+System shows history of grade edits and document approvals
 
-19. Privacy
-User data should be kept confidential
-Acceptance Criteria: Students cannot see other students’ personal information
+19.Student data must remain private
+Acceptance Criteria:
+Students can only see their own grades and attendance
+No access to other students’ data
 
-20. Feedback
-Users receive confirmation after actions
-Acceptance Criteria: System shows success messages when requests or updates are completed
+20. System should confirm user actions clearly
+Acceptance Criteria:
+Messages like “Attendance saved” or “Request submitted” are shown
 
 5. Application Specifications (How the system is built technically)
 a. Architecture
