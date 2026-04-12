@@ -39,6 +39,12 @@ User clicks logout
 Session is terminated
 User is redirected to login page
 
+3)Students and teachers can register accounts (optionally managed by IT staff).
+Acceptance Criteria:
+User provides required information (name, email, password, role)
+System validates input
+Account is created successfully
+
 4.System restricts features based on user role (Student, Teacher, IT Staff)
 Acceptance Criteria:
 Teachers can manage grades, attendance, and documents
