@@ -22,34 +22,11 @@ The system works as follows:
 
 
 A student, teacher, or IT staff member logs into the system through the frontend.
-
-
-The frontend sends the login request to the backend.
-
-
-The backend checks the user’s username/email and password in the database.
-
-
-If the login details are correct, the backend checks the user’s role.
-
-
-The correct dashboard is shown depending on whether the user is a student, teacher, or IT staff member.
-
-
-When a user performs an action, such as viewing grades, marking attendance, or requesting a document, the frontend sends the request to the backend.
-
-
-The backend processes the request and checks or updates the database.
-
-
+The frontend sends the login request to the backend.The backend checks the user’s username/email and password in the database.If the login details are correct, the backend checks the user’s role.The correct dashboard is shown depending on whether the user is a student, teacher, or IT staff member.
+When a user performs an action, such as viewing grades, marking attendance, or requesting a document, the frontend sends the request to the backend.he backend processes the request and checks or updates the database.
 The database stores or retrieves the required information.
-
-
 The backend sends the result back to the frontend.
-
-
 The user sees the updated information on the screen.
-
 
 Example Flow: Teacher Records Attendance
 A teacher logs into the system and selects the attendance page from the dashboard. The teacher chooses a class and date, then marks each student as present or absent. The frontend sends this attendance data to the backend. The backend checks that the teacher is assigned to that class and verifies that all required fields are completed. After validation, the backend stores the attendance record in the database. The database saves the attendance by student, class, date, and status. Finally, the backend sends a confirmation message back to the frontend, and the teacher sees a message such as “Attendance saved successfully.”
