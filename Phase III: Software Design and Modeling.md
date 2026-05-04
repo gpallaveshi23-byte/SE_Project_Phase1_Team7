@@ -46,31 +46,33 @@ Class Diagram
 Show the main classes in your system, including their attributes and methods, and how they
 relate to each other.
 Quantity: 1 class diagram that includes all classes.
-
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%281%29.png">
 Sequence Diagrams
 Illustrate step-by-step interactions between system components for key processes.
 Quantity: 3 sequence diagrams
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%282%29.png">
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%283%29.png">
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%285%29.png">
 
-3. Modeling
+4. Modeling
 Use Case Diagram
 Quantity: 1 case diagram that should include all users as in the second example.
 Show how users or systems interact with your application.
 
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%20%288%29.png">
 Activity Diagrams
 
 Provide flowcharts that describe the steps involved in completing tasks (Design flowcharts
 as you have done in first year when learning python).
 Quantity: 1-2 activity diagrams
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%20%289%29.png">
 State Diagrams
 Illustrate different states of objects and how they transition between states.
 Quantity: 2-3 state diagrams
-
-<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%20%288%29.png">
-<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%20%289%29.png">
 <img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%202026-05-04%20194110.png">
 <img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%202026-05-04%20200039.png">
-<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%281%29.png">
-<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%282%29.png">
-<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%283%29.png">
-<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%285%29.png">
-<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image.png">
+
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%20%288%29.png">
+
+
+
