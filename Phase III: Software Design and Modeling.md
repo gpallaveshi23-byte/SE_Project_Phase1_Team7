@@ -64,3 +64,13 @@ Quantity: 1-2 activity diagrams
 State Diagrams
 Illustrate different states of objects and how they transition between states.
 Quantity: 2-3 state diagrams
+
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%20%288%29.png">
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%20%289%29.png">
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%202026-05-04%20194110.png">
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%202026-05-04%20200039.png">
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%281%29.png">
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%282%29.png">
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%283%29.png">
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image%20%285%29.png">
+<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/image.png">
