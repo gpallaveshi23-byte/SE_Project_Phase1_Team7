@@ -5,65 +5,63 @@ Note: Examples below are used referring to a Cinema/Movie Reservation System.
 
 1. Software Architecture
 System Architecture
-
 The system follows a three-tier architecture, which means it is divided into three main parts: the Frontend, the Backend, and the Database. This structure makes the system easier to use, manage, update, and maintain.
-
-The system is designed for a school management platform used by students, teachers, and IT staff. It allows teachers to record attendance, enter grades, post announcements, and manage document requests. Students can view grades, attendance, class schedules, announcements, and request official school documents. IT staff manage accounts, monitor performance, handle backups, and maintain system security.
-
+The system is designed for a school management platform used by students, teachers, and IT staff. It allows teachers to record attendance, enter grades, post announcements, and manage document requests. Students can view grades, attendance, class schedules, announcements, and request official school documents. IT staff manage accounts, monitor performance, handle backups, and maintain system security. 
 Main Parts of the System
-
 Frontend — User Interface
-
 The frontend is the part of the system that students, teachers, and IT staff interact with. It includes pages such as the login page, dashboard, attendance page, grades page, schedule page, announcements page, and document requests page.
-
 For example, a teacher can open the attendance page, select a class and date, mark students as present or absent, and submit the attendance form.
-
 Backend — Business Logic
-
 The backend receives requests from the frontend and processes them. It checks user login details, controls access based on roles, validates entered data, and communicates with the database.
-
 For example, when a teacher enters grades, the backend checks whether the teacher is allowed to edit grades for that class. It then validates the grade information and sends it to the database to be saved.
-
 Database — Data Storage
-
 The database stores all important school information, including users, classes, attendance records, grades, schedules, announcements, and document requests.
-
-For example, when a student requests a transcript, the request is stored in the Documents table with the student ID, document type, request status, and request date.
-
+For example, when a student requests a transcript, the request is stored in the Documents table with the student ID, document type, request status, and request date. 
 System Interaction Flow
-
 The system works as follows:
 
+
 A student, teacher, or IT staff member logs into the system through the frontend.
+
+
 The frontend sends the login request to the backend.
+
+
 The backend checks the user’s username/email and password in the database.
+
+
 If the login details are correct, the backend checks the user’s role.
+
+
 The correct dashboard is shown depending on whether the user is a student, teacher, or IT staff member.
+
+
 When a user performs an action, such as viewing grades, marking attendance, or requesting a document, the frontend sends the request to the backend.
+
+
 The backend processes the request and checks or updates the database.
+
+
 The database stores or retrieves the required information.
+
+
 The backend sends the result back to the frontend.
+
+
 The user sees the updated information on the screen.
+
+
 Example Flow: Teacher Records Attendance
-
 A teacher logs into the system and selects the attendance page from the dashboard. The teacher chooses a class and date, then marks each student as present or absent. The frontend sends this attendance data to the backend. The backend checks that the teacher is assigned to that class and verifies that all required fields are completed. After validation, the backend stores the attendance record in the database. The database saves the attendance by student, class, date, and status. Finally, the backend sends a confirmation message back to the frontend, and the teacher sees a message such as “Attendance saved successfully.”
-
 Example Flow: Student Requests a Document
+A student logs into the system and opens the document requests page. The student selects a document type, such as a transcript, enrollment certificate, or attendance certificate. The frontend sends the request to the backend. The backend checks the student account and stores the request in the database with the status set to pending. A teacher can later review the request and approve or reject it. Once approved, the system generates the document as a PDF, and the student can download it from the system. 
 
-A student logs into the system and opens the document requests page. The student selects a document type, such as a transcript, enrollment certificate, or attendance certificate. The frontend sends the request to the backend. The backend checks the student account and stores the request in the database with the status set to pending. A teacher can later review the request and approve or reject it. Once approved, the system generates the document as a PDF, and the student can download it from the system.
+
+
 Component Diagram (UML)
 Provide a diagram showing the main components of your system and how they interact.
 Quantity: 1 UML diagram
 
-Components (middle part):
-Movie: manages movie details
-Customer: handles user information
-Booking: processes reservations
-Seats: manages seat availability
-Payment: handles transactions
-Data Access: meaning it reads/writes data from the database
-*When you create the UML diagram, explain all the sides of the diagram as it is done
-with the middle one in the example above.
 
 2. Detailed Design
 Class Diagram
