@@ -71,8 +71,3 @@ Illustrate different states of objects and how they transition between states.
 Quantity: 2-3 state diagrams
 <img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%202026-05-04%20194110.png">
 <img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%202026-05-04%20200039.png">
-
-<img src="https://raw.githubusercontent.com/gpallaveshi23-byte/SE_Project_Phase1_Team7/main/image/Screenshot%20%288%29.png">
-
-
-
