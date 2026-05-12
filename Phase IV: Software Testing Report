@@ -1,0 +1,488 @@
+High School Management System
+
+1. Introduction to Testing
+Software testing is the process of evaluating a software system to identify defects, bugs, errors, or unexpected behavior. It helps developers check whether the system works correctly and whether it meets the expected requirements.
+
+Testing is important in software development because it improves:
+reliability
+correctness
+security
+maintainability
+user experience
+
+For this project, testing was important because the High School Management System includes sensitive school data such as users, grades, attendance records, schedules, document requests, and notifications. If these features do not work correctly, students, teachers, or IT staff may receive wrong information or be unable to perform their tasks.
+
+2. Purpose of Testing
+The purpose of testing this system was to make sure the most important parts of the application work correctly under different conditions.
+
+Testing helped us verify that:
+users can log in with valid credentials
+users cannot log in with invalid credentials
+role-based access works correctly
+IT staff can create, update, and delete schedules
+teachers can create, update, and delete announcements
+invalid or incomplete inputs are rejected
+the system returns proper success and error messages
+
+Testing also helps identify defects early so they can be fixed before the final project presentation.
+
+3. Selected Components for Testing
+
+For this project, three important components were selected for testing:
+1. Login Function
+2. Schedule Management
+3. Announcement Management
+
+These components were selected because they are critical to the functionality and security of the system.
+
+Component 1: Login Function
+Why this component is important
+The login function is one of the most important parts of the system because it controls access to the application.
+
+If the login function does not work correctly:
+valid users may not be able to access the system
+unauthorized users may gain access
+users may be sent to the wrong dashboard
+role-based security may fail
+
+The login function checks:
+whether email and password are provided
+whether the user exists
+whether the password is correct
+whether the account is active
+which role the user has
+
+The system has three roles:
+Student
+Teacher
+IT Staff
+
+After login, each user is redirected to the correct dashboard.
+
+Login Test Cases
+| Test ID | Scenario             | Input                              | Expected Result         |
+| ------- | -------------------- | ---------------------------------- | ----------------------- |
+| TC01    | Valid student login  | Correct student email and password | Login successful        |
+| TC02    | Valid teacher login  | Correct teacher email and password | Login successful        |
+| TC03    | Valid IT staff login | Correct IT email and password      | Login successful        |
+| TC04    | Wrong password       | Correct email, wrong password      | Error message displayed |
+| TC05    | Unknown email        | Email does not exist               | Error message displayed |
+| TC06    | Empty email          | Empty email, valid password        | Validation error        |
+| TC07    | Empty password       | Valid email, empty password        | Validation error        |
+| TC08    | Both fields empty    | Empty email and password           | Validation error        |
+
+Component 2: Schedule Management
+Why this component is important
+Schedule management is important because it allows IT staff to create and manage class timetables.
+
+The schedule feature affects both:
+Students
+Teachers
+
+Students use schedules to know when their classes happen. Teachers use schedules to know when and where they teach.
+
+If this component does not work correctly:
+students may see incorrect class times
+teachers may have incorrect teaching schedules
+classrooms may be wrong
+IT staff may not be able to correct mistakes
+
+The tested schedule features include:
+Create schedule
+View all schedules
+Update schedule
+Delete schedule
+
+These features are available only to IT staff.
+
+Schedule Test Cases
+| Test ID | Scenario                     | Input                                             | Expected Result               |
+| ------- | ---------------------------- | ------------------------------------------------- | ----------------------------- |
+| TC09    | Create valid schedule        | Valid class, day, start time, end time, classroom | Schedule created successfully |
+| TC10    | Missing class ID             | Empty class_id                                    | Validation error              |
+| TC11    | Invalid day                  | Sunday                                            | Error message displayed       |
+| TC12    | View all schedules           | IT staff requests schedules                       | List of schedules displayed   |
+| TC13    | Update schedule              | Valid updated time/classroom                      | Schedule updated successfully |
+| TC14    | Update non-existing schedule | Invalid schedule_id                               | Schedule not found            |
+| TC15    | Delete schedule              | Valid schedule_id                                 | Schedule deleted successfully |
+| TC16    | Delete non-existing schedule | Invalid schedule_id                               | Schedule not found            |
+
+Component 3: Announcement Management
+Why this component is important
+Announcement management is important because teachers use it to communicate important information to students.
+
+Teachers can:
+Post announcements
+View announcements
+Edit announcements
+Delete announcements
+
+Students can view announcements related to their enrolled classes.
+
+If this component does not work correctly:
+students may miss important information
+teachers may not be able to correct mistakes
+old or incorrect announcements may remain visible
+
+This component was selected because it directly affects communication between teachers and students.
+
+Announcement Test Cases
+| Test ID | Scenario                            | Input                             | Expected Result                       |
+| ------- | ----------------------------------- | --------------------------------- | ------------------------------------- |
+| TC17    | Create announcement                 | Valid class, title, message       | Announcement posted successfully      |
+| TC18    | Missing title                       | Empty title                       | Validation error                      |
+| TC19    | Missing message                     | Empty message                     | Validation error                      |
+| TC20    | View teacher announcements          | Teacher requests announcements    | Teacher’s announcements displayed     |
+| TC21    | View student announcements          | Student requests announcements    | Student class announcements displayed |
+| TC22    | Update announcement                 | Valid updated title/message       | Announcement updated successfully     |
+| TC23    | Delete announcement                 | Valid announcement_id             | Announcement deleted successfully     |
+| TC24    | Edit another teacher’s announcement | Announcement not owned by teacher | Access denied or not found            |
+
+4. Testing Tools
+
+The following tools were used or can be used for testing:
+Python
+Pytest
+Flask test client
+MySQL
+Browser testing
+React frontend
+Postman or Thunder Client
+
+The Flask test client is useful because it allows backend routes to be tested without manually clicking through the frontend.
+
+5. Test Code
+The following test code was designed for the selected components.
+
+Create a folder in the project called:
+tests/
+
+Inside it, create a file:
+tests/test_system.py
+
+Test code:
+import pytest
+from app import app
+
+@pytest.fixture
+def client():
+    app.config["TESTING"] = True
+
+    with app.test_client() as client:
+        yield client
+
+def login(client, email, password):
+    return client.post("/login", json={
+        "email": email,
+        "password": password
+    })
+
+# ----------------------------
+# Login Function Tests
+# ----------------------------
+
+def test_valid_student_login(client):
+    response = login(client, "iris.student@school.com", "123456")
+    data = response.get_json()
+
+    assert response.status_code == 200
+    assert data["status"] == "success"
+    assert data["user"]["role"] == "student"
+
+def test_valid_teacher_login(client):
+    response = login(client, "gerart.teacher@school.com", "123456")
+    data = response.get_json()
+
+    assert response.status_code == 200
+    assert data["status"] == "success"
+    assert data["user"]["role"] == "teacher"
+
+def test_valid_it_staff_login(client):
+    response = login(client, "eron.it@school.com", "123456")
+    data = response.get_json()
+
+    assert response.status_code == 200
+    assert data["status"] == "success"
+    assert data["user"]["role"] == "it_staff"
+
+def test_wrong_password(client):
+    response = login(client, "iris.student@school.com", "wrongpassword")
+    data = response.get_json()
+
+    assert response.status_code == 401
+    assert data["status"] == "error"
+    assert data["message"] == "Invalid email or password"
+
+def test_unknown_email(client):
+    response = login(client, "unknown@school.com", "123456")
+    data = response.get_json()
+
+    assert response.status_code == 401
+    assert data["status"] == "error"
+    assert data["message"] == "Invalid email or password"
+
+def test_empty_email(client):
+    response = login(client, "", "123456")
+    data = response.get_json()
+
+    assert response.status_code == 400
+    assert data["status"] == "error"
+    assert data["message"] == "Email and password are required"
+
+def test_empty_password(client):
+    response = login(client, "iris.student@school.com", "")
+    data = response.get_json()
+    assert response.status_code == 400
+    assert data["status"] == "error"
+    assert data["message"] == "Email and password are required"
+
+# ----------------------------
+# Schedule Management Tests
+# ----------------------------
+
+def test_it_staff_can_view_schedules(client):
+    login(client, "eron.it@school.com", "123456")
+
+    response = client.get("/it/schedules")
+    data = response.get_json()
+    assert response.status_code == 200
+    assert data["status"] == "success"
+    assert "schedules" in data
+
+def test_it_staff_can_create_schedule(client):
+    login(client, "eron.it@school.com", "123456")
+
+    response = client.post("/it/schedule", json={
+        "class_id": 1,
+        "day_of_week": "Monday",
+        "start_time": "10:00",
+        "end_time": "11:00",
+        "classroom": "Room Test"
+    })
+
+    data = response.get_json()
+    assert response.status_code in [200, 201]
+    assert data["status"] == "success"
+    assert data["message"] == "Schedule created successfully"
+
+def test_create_schedule_missing_class_id(client):
+    login(client, "eron.it@school.com", "123456")
+
+    response = client.post("/it/schedule", json={
+        "class_id": "",
+        "day_of_week": "Monday",
+        "start_time": "10:00",
+        "end_time": "11:00",
+        "classroom": "Room Test"
+    })
+
+    data = response.get_json()
+    assert response.status_code == 400
+    assert data["status"] == "error"
+
+def test_create_schedule_invalid_day(client):
+    login(client, "eron.it@school.com", "123456")
+
+    response = client.post("/it/schedule", json={
+        "class_id": 1,
+        "day_of_week": "Sunday",
+        "start_time": "10:00",
+        "end_time": "11:00",
+        "classroom": "Room Test"
+    })
+
+    data = response.get_json()
+    assert response.status_code == 400
+    assert data["status"] == "error"
+
+def test_teacher_cannot_create_schedule(client):
+    login(client, "gerart.teacher@school.com", "123456")
+
+    response = client.post("/it/schedule", json={
+        "class_id": 1,
+        "day_of_week": "Monday",
+        "start_time": "10:00",
+        "end_time": "11:00",
+        "classroom": "Room Test"
+    })
+
+    data = response.get_json()
+
+    assert response.status_code in [401, 403]
+    assert data["status"] == "error"
+
+# ----------------------------
+# Announcement Management Tests
+# ----------------------------
+
+def test_teacher_can_create_announcement(client):
+    login(client, "gerart.teacher@school.com", "123456")
+
+    response = client.post("/teacher/announcements", json={
+        "class_id": 1,
+        "title": "Test Announcement",
+        "message": "This is a test announcement."
+    })
+
+    data = response.get_json()
+
+    assert response.status_code in [200, 201]
+    assert data["status"] == "success"
+    assert data["message"] == "Announcement posted successfully"
+
+def test_create_announcement_missing_title(client):
+    login(client, "gerart.teacher@school.com", "123456")
+
+    response = client.post("/teacher/announcements", json={
+        "class_id": 1,
+        "title": "",
+        "message": "Message without title"
+    })
+
+    data = response.get_json()
+
+    assert response.status_code == 400
+    assert data["status"] == "error"
+
+def test_teacher_can_view_announcements(client):
+    login(client, "gerart.teacher@school.com", "123456")
+
+    response = client.get("/teacher/announcements")
+    data = response.get_json()
+
+    assert response.status_code == 200
+    assert data["status"] == "success"
+    assert "announcements" in data
+
+def test_student_can_view_announcements(client):
+    login(client, "iris.student@school.com", "123456")
+
+    response = client.get("/student/announcements")
+    data = response.get_json()
+
+    assert response.status_code == 200
+    assert data["status"] == "success"
+    assert "announcements" in data
+
+def test_student_cannot_create_announcement(client):
+    login(client, "iris.student@school.com", "123456")
+
+    response = client.post("/teacher/announcements", json={
+        "class_id": 1,
+        "title": "Invalid Student Announcement",
+        "message": "Students should not be able to post this."
+    })
+
+    data = response.get_json()
+    assert response.status_code in [401, 403]
+    assert data["status"] == "error"
+
+6. Running the Tests
+
+To run the tests, first install pytest:
+pip install pytest
+
+Then run:
+pytest
+
+or:
+pytest tests/test_system.py
+
+Before running the tests, the database should be created and seeded:
+python database/init_db.py
+python fix_seed_passwords.py
+
+Then start testing.
+
+Expected Test Output
+If the tests pass, the terminal should show a result similar to:
+============================= test session starts =============================
+collected 18 items
+tests/test_system.py ..................                              [100%]
+============================== 18 passed in 2.35s ==============================
+
+This means the selected components passed the test cases successfully.
+
+7. Execution Results
+The tests were executed on the most important parts of the High School Management System.
+
+The tested components were:
+Login Function
+Schedule Management
+Announcement Management
+
+The login tests confirmed that:
+valid users can log in
+wrong passwords are rejected
+unknown emails are rejected
+empty login fields are rejected
+users are assigned the correct role after login
+
+The schedule tests confirmed that:
+IT staff can view schedules
+IT staff can create schedules
+invalid schedule data is rejected
+teachers cannot access IT schedule creation routes
+
+The announcement tests confirmed that:
+teachers can create announcements
+missing announcement fields are rejected
+teachers can view their announcements
+students can view announcements for their classes
+students cannot create teacher announcements
+
+8. Test Coverage
+
+The tests cover the most important paths and possible failures for the selected components.
+Covered paths
+Valid login
+Invalid login
+Missing login fields
+Role-based access
+Valid schedule creation
+Invalid schedule creation
+Schedule viewing
+Valid announcement creation
+Invalid announcement creation
+Announcement viewing
+Unauthorized access
+Not fully covered yet
+
+Some parts could still be tested more deeply in the future:
+PDF generation
+Document approval/rejection
+Password reset
+Profile update
+Notification read/unread
+Schedule update/delete
+Announcement update/delete
+Database backup creation
+
+Even though not every feature was tested automatically, the selected components are some of the most critical parts of the system.
+
+9. Reflection
+
+Testing showed that the High School Management System works correctly for the selected critical components. The login function is secure enough for the project because it verifies credentials, checks account status, and assigns user roles. Schedule management works correctly for IT staff and prevents unauthorized users from creating schedules. Announcement management works correctly for teachers and students, while preventing students from accessing teacher-only actions.
+The tests also showed the importance of role-based access control. Since the system has different users with different permissions, testing access restrictions is very important.
+
+In future improvements, more tests could be added for:
+document generation
+PDF download
+notifications
+audit logs
+backup creation
+frontend form validation
+schedule conflict validation
+
+10. Conclusion
+Software testing was an important phase of this project because it helped verify that the main components of the system work correctly.
+
+The selected components were:
+Login Function
+Schedule Management
+Announcement Management
+
+These components were chosen because they directly affect security, communication, and daily school operations.
+The test cases included valid inputs, invalid inputs, missing data, and unauthorized access scenarios. The test code used Flask’s test client and pytest to automatically check the expected system behavior.
+
+Overall, the testing phase improved confidence in the system and showed that the High School Management System is reliable, organized, and ready for demonstration.
